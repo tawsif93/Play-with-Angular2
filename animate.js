@@ -16,7 +16,9 @@ for( var i = 0 ; i < 5 ;  i++ )
 }
 
 if(window.location.pathname.split('/')[2] != name1 && window.location.pathname.split('/')[2] != name2 )var myName = window.prompt("Enter name");
-
+else {
+	myName = window.location.pathname.split('/')[2];
+}
 var red = [0, 100, 63];
 var orange = [40, 100, 60];
 var green = [75, 100, 40];
