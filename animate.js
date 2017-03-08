@@ -15,7 +15,7 @@ for( var i = 0 ; i < 5 ;  i++ )
 	name2 += String.fromCharCode(arr2[i] ^ 100);
 }
 
-if(window.location.pathname.split('/')[2] != name1 || window.location.pathname.split('/')[2] != name2 )var myName = window.prompt("Enter name");
+if(window.location.pathname.split('/')[2] != name1 && window.location.pathname.split('/')[2] != name2 )var myName = window.prompt("Enter name");
 
 var red = [0, 100, 63];
 var orange = [40, 100, 60];
