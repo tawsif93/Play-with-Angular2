@@ -1,6 +1,3 @@
-/**
- * Created by peacefrog on 3/9/17.
- */
 function Vector(x, y, z) {
 	this.x = x;
 	this.y = y;
@@ -279,4 +276,39 @@ function drawName(name, letterColors) {
 		g[j].curPos.x = (canvasWidth / 2 - offset / 2) + g[j].curPos.x;
 		g[j].curPos.y = (canvasHeight / 2 - 105) + g[j].curPos.y;
 		g[j].originalPos.x = (canvasWidth / 2 - offset / 2) + g[j].originalPos.x;
-		g[j].originalPos.y = (canvasHeight / 2 -
+		g[j].originalPos.y = (canvasHeight / 2 - 105) + g[j].originalPos.y;
+	}
+
+	pointCollection = new PointCollection();
+	pointCollection.points = g;
+	initEventListeners();
+}
+
+window.reset = false;
+
+$(window).mouseleave(function () {
+	window.reset = true;
+});
+
+$(window).mouseenter(function () {
+	window.reset = false;
+});
+
+var canvas = $("#myCanvas");
+var canvasHeight;
+var canvasWidth;
+var ctx;
+var pointCollection;
+
+document.rotationForce = 0.0;
+document.Friction = 0.85;
+
+var white = [0, 0, 100];
+var black = [0, 0, 27];
+var red = [0, 100, 63];
+var orange = [40, 100, 60];
+var green = [75, 100, 40];
+var blue = [196, 77, 55];
+var purple = [280, 50, 60];
+
+setTimeout(updateCanvasDimensions, 30);
