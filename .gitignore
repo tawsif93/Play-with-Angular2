@@ -6,7 +6,6 @@
 /src
 /e2e
 
-
 # dependencies
 /node_modules
 
@@ -42,3 +41,4 @@ testem.log
 #System Files
 .DS_Store
 Thumbs.db
+dist/
