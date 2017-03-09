@@ -1,10 +1,10 @@
-import { GroceriesPage } from './app.po';
+import { AngularExplorePage } from './app.po';
 
-describe('groceries App', () => {
-  let page: GroceriesPage;
+describe('angular-explore App', () => {
+  let page: AngularExplorePage;
 
   beforeEach(() => {
-    page = new GroceriesPage();
+    page = new AngularExplorePage();
   });
 
   it('should display message saying app works', () => {
