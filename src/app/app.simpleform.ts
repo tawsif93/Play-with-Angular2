@@ -61,7 +61,7 @@ import { Component } from '@angular/core';
 	  <div class="form-group">
 		<button type="submit" class="btn btn-default">Submit</button>
 	  </div>
-	</form>
+	</form> 
   </div>
   `
 })
