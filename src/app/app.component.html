@@ -1,28 +1,24 @@
-<h1>
-	{{title}}
-</h1>
-
-<form [formGroup]="loginForm" (ngSubmit)="doLogin($event)">
-	<input formControlName="email" type="email" placeholder="Your email">
-	<input formControlName="password" type="password" placeholder="Your password">
-	<button type="submit">Log in</button>
-</form>
-
-
-<div class="container">
-	<div class="row">
-		<div class="col-sm-6 col-sm-offset-3">
-			<simple-form></simple-form>
-		</div>
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse sticky-top">
+	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+	        data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+	        aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<a class="navbar-brand" routerLink="/" routerLinkActive="active">Angular Exploree</a>
+	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+		<ul class="nav navbar-nav">
+			<li class="nav-item nav-link active"><a routerLink="/" routerLinkActive="active">Home</a></li>
+			<li class="nav-item nav-link"><a routerLink="/simpleform" routerLinkActive="active">Simple Form</a></li>
+			<li class="nav-item nav-link"><a routerLink="/complexform" routerLinkActive="active">Complex Form</a></li>
+			<li class="nav-item nav-link"><a routerLink="/validationform" routerLinkActive="active">ValidationForm</a>
+			</li>
+		</ul>
+		
+		<ul class="nav navbar-nav navbar-toggler-right">
+			<li class="nav-item nav-link"><a href="#"><span class="fa fa-user"></span> Sign Up</a></li>
+			<li class="nav-item nav-link"><a href="#"><span class="fa fa-bathtub"></span> Login</a></li>
+		</ul>
 	</div>
-	<div class="row">
-		<div class="col-sm-6 col-sm-offset-3">
-			<complex-form></complex-form>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-6 col-sm-offset-3">
-			<form-validation></form-validation>
-		</div>
-	</div>
-</div>
+</nav>
+<router-outlet></router-outlet>
+
