@@ -63,7 +63,6 @@ import { Component } from '@angular/core';
 			</div>
 		</form>
 	</div>
-
   `
 })
 export class SimpleFormComponent {
