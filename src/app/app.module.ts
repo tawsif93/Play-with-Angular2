@@ -18,6 +18,7 @@ import {SimpleformComponent} from './simpleform/simpleform.component';
 import {ComplexformComponent} from './complexform/complexform.component';
 import {FormvalidationComponent} from './formvalidation/formvalidation.component';
 import {HomePageComponent} from './home-page/home-page.component';
+import {LoginComponent} from './login/login.component';
 
 const appRoutes: Routes = [
 	{path: '', component: HomePageComponent},
@@ -40,6 +41,7 @@ const appRoutes: Routes = [
 		ComplexformComponent,
 		FormvalidationComponent,
 		HomePageComponent,
+		LoginComponent,
 	],
 	imports     : [
 		BrowserModule,

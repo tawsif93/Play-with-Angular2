@@ -1,24 +1,31 @@
-<form [formGroup]="loginForm" (ngSubmit)="doLogin($event)">
-	<input formControlName="email" type="email" placeholder="Your email">
-	<input formControlName="password" type="password" placeholder="Your password">
-	<button type="submit">Log in</button>
-</form>
+<!--<form [formGroup]="loginForm" (ngSubmit)="doLogin($event)">-->
+<!--<input formControlName="email" type="email" placeholder="Your email">-->
+<!--<input formControlName="password" type="password" placeholder="Your password">-->
+<!--<button type="submit">Log in</button>-->
+<!--</form>-->
 
 
+<!--<div class="container">-->
+<!--<div class="row">-->
+<!--<div class="col-sm-6 col-sm-offset-3">-->
+<!--<simple-form></simple-form>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="row">-->
+<!--<div class="col-sm-6 col-sm-offset-3">-->
+<!--<complex-form></complex-form>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div class="row">-->
+<!--<div class="col-sm-6 col-sm-offset-3">-->
+<!--<form-validation></form-validation>-->
+<!--</div>-->
+<!--</div>-->
+<!--</div>-->
 <div class="container">
 	<div class="row">
 		<div class="col-sm-6 col-sm-offset-3">
-			<simple-form></simple-form>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-6 col-sm-offset-3">
-			<complex-form></complex-form>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-sm-6 col-sm-offset-3">
-			<form-validation></form-validation>
+			<app-login></app-login>
 		</div>
 	</div>
 </div>

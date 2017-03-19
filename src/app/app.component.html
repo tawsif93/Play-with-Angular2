@@ -4,14 +4,25 @@
 	        aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
-	<a class="navbar-brand" routerLink="/" routerLinkActive="active">Angular Exploree</a>
+	<a class="navbar-brand" routerLink="/" routerLinkActive="active">
+		<img src="../assets/images/explore.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+		Angular Exploree</a>
 	<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 		<ul class="nav navbar-nav">
 			<li class="nav-item nav-link active"><a routerLink="/" routerLinkActive="active">Home</a></li>
-			<li class="nav-item nav-link"><a routerLink="/simpleform" routerLinkActive="active">Simple Form</a></li>
-			<li class="nav-item nav-link"><a routerLink="/complexform" routerLinkActive="active">Complex Form</a></li>
-			<li class="nav-item nav-link"><a routerLink="/validationform" routerLinkActive="active">ValidationForm</a>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+				   aria-haspopup="true" aria-expanded="false">
+					Forms
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" routerLink="/simpleform" routerLinkActive="active">Simple Form</a>
+					<a class="dropdown-item" routerLink="/complexform" routerLinkActive="active">Complex Form</a>
+					<a class="dropdown-item" routerLink="/validationform" routerLinkActive="active">ValidationForm</a>
+				</div>
 			</li>
+			<li class="nav-item nav-link"><a routerLink="#" routerLinkActive="active">Chat app</a></li>
+		
 		</ul>
 		
 		<ul class="nav navbar-nav navbar-toggler-right">
