@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
 		let form = {
 			'id_token': data.id_token
 		};
-		this.http.post('https://reviewgen.auth0.com/tokeninfo', form).subscribe(
+		this.http.post('https://tawsif.auth0.com/tokeninfo', form).subscribe(
 			(res: any) => {
 				let data = res.json();
 				this.profile = data;
