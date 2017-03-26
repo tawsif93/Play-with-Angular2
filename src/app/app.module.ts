@@ -4,6 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule, Routes} from '@angular/router'
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {MaterialModule} from '@angular/material';
+import {AngularFireModule} from 'angularfire2';
+import {FlexLayoutModule} from '@angular/flex-layout';
+
+import 'hammerjs';
+
+import {environment} from '../environments/environment';
 
 import { AppComponent } from './app.component';
 
@@ -49,7 +56,10 @@ const appRoutes: Routes = [
 		ReactiveFormsModule,
 		HttpModule,
 		RouterModule.forRoot(appRoutes),
-		NgbModule.forRoot()
+		NgbModule.forRoot(),
+		MaterialModule,
+		AngularFireModule.initializeApp(environment.firebase),
+		FlexLayoutModule
 	],
 	providers   : [],
 	bootstrap   : [AppComponent]
