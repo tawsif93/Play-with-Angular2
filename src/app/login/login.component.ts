@@ -8,11 +8,11 @@ import {Http, Response, Request, RequestMethod} from '@angular/http';
 	styleUrls  : ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-	
+
 	loginForm: FormGroup;
 	authenticated: boolean;
 	profile: Object;
-	
+
 	constructor(fb: FormBuilder, public http: Http) {
 		// We’ll check if the user is logged in once this component is loaded.
 		// We’ll do this by checking if a jwt key value pair exists in local storage.
@@ -25,12 +25,12 @@ export class LoginComponent implements OnInit {
 		this.loginForm = fb.group({
 			'email'   : [null, Validators.required],
 			'password': [null, Validators.required],
-		})
+		});
 	}
-	
+
 	submitForm(value: any) {
 		// Once the form is submitted and we get the users email and password we’ll format our request based on the Auth0 API.
-		let form = {
+		const form = {
 			'client_id' : 'OYZIbStHeL0HpepmIBJrKxaqAo7puUjW',
 			'username'  : value.email,
 			'password'  : value.password,
@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
 		this.http.post('https://tawsif.auth0.com/oauth/ro', form).subscribe(
 			(res: any) => {
 				// We’ll subscribe to the request and capture the response
-				let data = res.json();
+				const data = res.json();
 				// If we get an id_token, we’ll know the request is successful
 				// so we’ll store the token in localStorage.
 				// We won’t handle the error use case for this tutorial.
@@ -53,19 +53,20 @@ export class LoginComponent implements OnInit {
 				}
 				console.log(data);
 			}
-		)
+		);
 	}
-	
+
 	// Here we are similarly calling the Auth0 API, this time the /
 	// tokeninfo endpoint which will return the users data we requested.
 	// All we’ll need to pass to the request is our JSON Web Token.
 	getUserInfo(data: any) {
-		let form = {
+		const form = {
 			'id_token': data.id_token
 		};
 		this.http.post('https://tawsif.auth0.com/tokeninfo', form).subscribe(
 			(res: any) => {
-				let data = res.json();
+				// tslint:disable-next-line:no-shadowed-variable
+				const data = res.json();
 				this.profile = data;
 				localStorage.setItem('profile', JSON.stringify(data));
 				this.authenticated = true;
@@ -74,17 +75,18 @@ export class LoginComponent implements OnInit {
 				// If we did not do this, the previous values would still be displayed.
 				this.loginForm.reset();
 			}
-		)
+		);
 	}
-	
-	// We’ll implement a logout function that removes the jwt and user profile from localStorage and sets the authenticated boolean to false which will cause the component to display the login form.
+
+	// We’ll implement a logout function that removes the jwt and user profile from localStorage and sets
+	// the authenticated boolean to false which will cause the component to display the login form.
 	logout() {
 		localStorage.removeItem('jwt');
 		localStorage.removeItem('profile');
 		this.authenticated = false;
 	}
-	
+
 	ngOnInit() {
 	}
-	
+
 }

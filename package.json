@@ -8,7 +8,8 @@
 		"build": "ng build",
 		"test": "ng test",
 		"lint": "ng lint",
-		"e2e": "ng e2e"
+		"e2e": "ng e2e",
+		// "postinstall": "post_install.sh"
 	},
 	"private": true,
 	"dependencies": {
@@ -28,8 +29,10 @@
 		"angularfire2": "^2.0.0-beta.8",
 		"auth0-js": "^8.4.0",
 		"auth0-lock": "^10.13.0",
+		"bootstrap": "^4.0.0-alpha.6",
 		"core-js": "^2.4.1",
 		"firebase": "^3.7.2",
+		"font-awesome": "^4.7.0",
 		"hammerjs": "^2.0.8",
 		"jquery": "^3.1.1",
 		"rxjs": "^5.1.0",
