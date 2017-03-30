@@ -9,8 +9,6 @@ import {FormBuilder, Validators, FormControl} from '@angular/forms';
 
 export class AppComponent {
 	title = 'app works! Yeah';
-	
-	
 }
 
 
