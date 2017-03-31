@@ -25,6 +25,8 @@ import {LoginComponent} from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 import { appRouting } from './app.routing';
+import { SharedModule } from './shared/shared.module';
+
 
 @NgModule({
 	declarations: [
@@ -47,7 +49,8 @@ import { appRouting } from './app.routing';
 		NgbModule.forRoot(),
 		MaterialModule,
 		AngularFireModule.initializeApp(environment.firebase),
-		FlexLayoutModule
+		FlexLayoutModule,
+		SharedModule.forRoot()
 	],
 	providers   : [],
 	bootstrap   : [AppComponent]
