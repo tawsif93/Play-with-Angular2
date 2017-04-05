@@ -22,11 +22,13 @@
 				"../node_modules/bootstrap/dist/css/bootstrap.min.css",
 				"styles.css",
 				"../node_modules/font-awesome/css/font-awesome.css",
+				"libraries/css/material-dashboard.css",
 				"libraries/css/pe-icon-7-stroke.css",
 				"libraries/css/helper.css"
 			],
 			"scripts": [
 				"../node_modules/jquery/dist/jquery.min.js",
+				"libraries/js/material-dashboard.js",
 				"../node_modules/tether/dist/js/tether.min.js",
 				"../node_modules/bootstrap/dist/js/bootstrap.min.js"
 			],
