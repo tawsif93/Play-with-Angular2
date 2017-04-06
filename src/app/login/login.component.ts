@@ -1,11 +1,13 @@
-import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormBuilder, Validators} from '@angular/forms';
-import {Http, Response, Request, RequestMethod} from '@angular/http';
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Http, Response, Request, RequestMethod } from '@angular/http';
+
+import { SharedService } from '../shared/shared.service';
 
 @Component({
-	selector   : 'app-login',
+	selector: 'app-login',
 	templateUrl: './login.component.html',
-	styleUrls  : ['./login.component.css']
+	styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
@@ -13,7 +15,8 @@ export class LoginComponent implements OnInit {
 	authenticated: boolean;
 	profile: Object;
 
-	constructor(fb: FormBuilder, public http: Http) {
+	constructor(fb: FormBuilder, public http: Http, private sharedService: SharedService) {
+		this.sharedService.authenticated = true;
 		// We’ll check if the user is logged in once this component is loaded.
 		// We’ll do this by checking if a jwt key value pair exists in local storage.
 		if (localStorage.getItem('jwt')) {
@@ -23,7 +26,7 @@ export class LoginComponent implements OnInit {
 		}
 		// For our form, we’ll just have two fields and we’ll require both of them to be filled out before the form can be submitted
 		this.loginForm = fb.group({
-			'email'   : [null, Validators.required],
+			'email': [null, Validators.required],
 			'password': [null, Validators.required],
 		});
 	}
@@ -31,12 +34,12 @@ export class LoginComponent implements OnInit {
 	submitForm(value: any) {
 		// Once the form is submitted and we get the users email and password we’ll format our request based on the Auth0 API.
 		const form = {
-			'client_id' : 'OYZIbStHeL0HpepmIBJrKxaqAo7puUjW',
-			'username'  : value.email,
-			'password'  : value.password,
+			'client_id': 'OYZIbStHeL0HpepmIBJrKxaqAo7puUjW',
+			'username': value.email,
+			'password': value.password,
 			'connection': 'Username-Password-Authentication',
 			'grant_type': 'password',
-			'scope'     : 'openid name email'
+			'scope': 'openid name email'
 		};
 		// Once we have our data formed, we’ll send the request using the Angular 2 HTTP library.
 		this.http.post('https://tawsif.auth0.com/oauth/ro', form).subscribe(

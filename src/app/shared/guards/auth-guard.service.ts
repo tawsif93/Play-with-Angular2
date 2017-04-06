@@ -1,17 +1,23 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, CanActivateChild } from '@angular/router';
+import { SharedService } from '../shared.service';
 
 @Injectable()
 export class AuthGuard implements CanActivate, CanActivateChild {
 
-  canActivate() {
-    console.log('i am checking to see if you are logged in');
-    return true;
-  }
+	constructor(private sharedService: SharedService) { }
 
-  canActivateChild() {
-    console.log('checking child route access');
-    return true;
-  }
+	canActivate() {
+		console.log('i am checking to see if you are logged in');
+		if (this.sharedService.authenticated) {
+			console.log('User logged in');
+		}
+		return true;
+	}
+
+	canActivateChild() {
+		console.log('checking child route access');
+		return true;
+	}
 
 }

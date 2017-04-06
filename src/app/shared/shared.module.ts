@@ -4,7 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { COMPILER_PROVIDERS } from '@angular/compiler';
 
-const SHARED_COMPONENTS  = [
+import { AuthGuard } from './guards/auth-guard.service';
+import { CanDeactivateGuard } from './guards/can-deactivate-guard.service';
+import { SharedService } from './shared.service';
+
+const SHARED_COMPONENTS = [
 
 ];
 
@@ -24,7 +28,11 @@ export class SharedModule {
 	static forRoot(): ModuleWithProviders {
 		return {
 			ngModule: SharedModule,
-			providers: []
+			providers: [
+				AuthGuard,
+				CanDeactivateGuard,
+				SharedService
+			]
 		};
 	}
 }

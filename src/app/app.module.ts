@@ -10,18 +10,18 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import 'hammerjs';
 
-import {environment} from '../environments/environment';
+import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 
 // We need to import the ReactiveFormsModule and import it
 import { ReactiveFormsModule } from '@angular/forms';
 
-import {SimpleformComponent} from './simpleform/simpleform.component';
-import {ComplexformComponent} from './complexform/complexform.component';
-import {FormvalidationComponent} from './formvalidation/formvalidation.component';
-import {HomePageComponent} from './home-page/home-page.component';
-import {LoginComponent} from './login/login.component';
+import { SimpleformComponent } from './simpleform/simpleform.component';
+import { ComplexformComponent } from './complexform/complexform.component';
+import { FormvalidationComponent } from './formvalidation/formvalidation.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 import { appRouting } from './app.routing';
@@ -40,7 +40,7 @@ import { SharedModule } from './shared/shared.module';
 		LoginComponent,
 		NotFoundComponent
 	],
-	imports     : [
+	imports: [
 		BrowserModule,
 		FormsModule,
 		ReactiveFormsModule,
@@ -52,7 +52,7 @@ import { SharedModule } from './shared/shared.module';
 		FlexLayoutModule,
 		SharedModule.forRoot()
 	],
-	providers   : [],
-	bootstrap   : [AppComponent]
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
