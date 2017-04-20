@@ -26,6 +26,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 import { appRouting } from './app.routing';
 import { SharedModule } from './shared/shared.module';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { SharedModule } from './shared/shared.module';
 		FormvalidationComponent,
 		HomePageComponent,
 		LoginComponent,
-		NotFoundComponent
+		NotFoundComponent,
+		SignupComponent
 	],
 	imports: [
 		BrowserModule,
