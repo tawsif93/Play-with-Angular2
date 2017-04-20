@@ -6,17 +6,17 @@
 export const environment = {
 	production: false,
 	// Initialize Firebase
-	firebase  : {
-		apiKey           : "AIzaSyDGILIvU-FYzdJ-TlSQm-TM7kFxwWXpsUI",
-		authDomain       : "chat-app-3e5c0.firebaseapp.com",
-		databaseURL      : "https://chat-app-3e5c0.firebaseio.com",
-		storageBucket    : "chat-app-3e5c0.appspot.com",
-		messagingSenderId: "12388931918"
+	firebase: {
+		apiKey: 'AIzaSyDGILIvU-FYzdJ-TlSQm-TM7kFxwWXpsUI',
+		authDomain: 'chat-app-3e5c0.firebaseapp.com',
+		databaseURL: 'https://chat-app-3e5c0.firebaseio.com',
+		storageBucket: 'chat-app-3e5c0.appspot.com',
+		messagingSenderId: '12388931918'
 	},
-	
+
 	auth0: {
 		clientID: 'N4bGucI0PJe7HmadMengAepv61fZN8xD',
-		domain  : 'tawsif.auth0.com'
+		domain: 'tawsif.auth0.com'
 	}
-	
+
 };
