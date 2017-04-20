@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
-import { environment } from '../../environments/environment';
+import { environment } from '../../../environments/environment';
 
 // Avoid name not found warnings
 declare var Auth0Lock: any;
@@ -8,7 +8,7 @@ declare var Auth0Lock: any;
 @Injectable()
 export class Auth {
 	// Configure Auth0
-	lock = new Auth0Lock(myConfig.clientID, myConfig.domain, {
+	lock = new Auth0Lock(environment.auth0.clientID, environment.auth0.domain, {
 		allowSignUp: false,
 		languageDictionary: {
 			emailInputPlaceholder: 'something@youremail.com',
@@ -23,13 +23,12 @@ export class Auth {
 				name: 'address',                              // required
 				placeholder: 'enter your address',            // required
 				icon: 'https://example.com/address_icon.png', // optional
-				class: 'fa fa-login',
 				validator: function (value) {                  // optional
 					// only accept addresses with more than 10 chars
 					return {
 						valid: value.length > 10,
 						hint: 'Must have 10 or more chars'
-					}
+					};
 				}
 			},
 			{
