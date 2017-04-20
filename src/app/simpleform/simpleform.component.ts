@@ -1,18 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
-	selector   : 'app-simpleform',
+	selector: 'app-simpleform',
 	templateUrl: './simpleform.component.html',
-	styleUrls  : ['./simpleform.component.css']
+	styleUrls: ['./simpleform.component.css']
 })
 export class SimpleformComponent implements OnInit {
-	
+
 	constructor() {
 	}
-	
+
 	ngOnInit() {
 	}
-	
+
 	submitForm(form: any): void {
 		console.log('Form Data: ');
 		console.log(form);

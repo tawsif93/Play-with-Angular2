@@ -1,4 +1,5 @@
 {
 	"typescript.check.workspaceVersion": false,
-	"vsicons.presets.angular": true
+	"vsicons.presets.angular": true,
+	"typescript.implementationsCodeLens.enabled": true
 }
