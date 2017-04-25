@@ -1,6 +1,6 @@
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse sticky-top">
 	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-	 		aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+	 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 	</button>
 
@@ -25,8 +25,9 @@
 		</ul>
 
 		<ul class="nav navbar-nav navbar-toggler-right">
-			<li class="nav-item "><a routerLink="/s" routerLinkActive="active" class="nav-link"><span class="fa fa-user"></span> Sign Up</a></li>
-			<li class="nav-item "><a routerLink="/y" routerLinkActive="active" class="nav-link"><span class="fa fa-bathtub"></span> Login</a></li>
+			<li class="nav-item "><a routerLink="/s" routerLinkActive="active" class="nav-link"><span class="fa fa-user"></span>Sign Up</a></li>
+			<li class="nav-item " *ngIf="!auth.authenticated()"><a (click)="auth.login()" routerLinkActive="active" class="nav-link"><span class="fa fa-bathtub"></span>Log In</a></li>
+			<li class="nav-item " *ngIf="auth.authenticated()"><a (click)="auth.logout()" routerLinkActive="active" class="nav-link"><span class="fa fa-bathtub"></span>Log Out</a></li>
 		</ul>
 	</div>
 </nav>

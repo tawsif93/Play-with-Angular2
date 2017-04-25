@@ -9,7 +9,7 @@ declare var Auth0Lock: any;
 export class Auth {
 	// Configure Auth0
 	lock = new Auth0Lock(environment.auth0.clientID, environment.auth0.domain, {
-		allowSignUp: false,
+		// allowSignUp: false,
 		languageDictionary: {
 			emailInputPlaceholder: 'something@youremail.com',
 			title: 'Log me in'

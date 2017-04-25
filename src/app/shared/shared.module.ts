@@ -7,6 +7,7 @@ import { COMPILER_PROVIDERS } from '@angular/compiler';
 import { AuthGuard } from './guards/auth-guard.service';
 import { CanDeactivateGuard } from './guards/can-deactivate-guard.service';
 import { SharedService } from './shared.service';
+import { Auth } from './services/auth.service';
 
 const SHARED_COMPONENTS = [
 
@@ -31,7 +32,8 @@ export class SharedModule {
 			providers: [
 				AuthGuard,
 				CanDeactivateGuard,
-				SharedService
+				SharedService,
+				Auth
 			]
 		};
 	}
