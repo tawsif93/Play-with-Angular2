@@ -15,7 +15,7 @@ export const environment = {
 	},
 
 	auth0: {
-		clientID: 'N4bGucI0PJe7HmadMengAepv61fZN8xD',
+		clientID: 'OYZIbStHeL0HpepmIBJrKxaqAo7puUjW',
 		domain: 'tawsif.auth0.com'
 	}
 
