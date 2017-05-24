@@ -16,14 +16,14 @@ export class Auth {
 			title: 'Log me in'
 		},
 		theme: {
-			logo: 'https://github.com/tawsif93/groceries/blob/master/src/assets/images/explore.svg',
+			logo: '../../../assets/images/explore.svg',
 			primaryColor: 'green'
 		},
 		additionalSignUpFields: [
 			{
 				name: 'address',                              // required
 				placeholder: 'enter your address',            // required
-				icon: 'https://example.com/address_icon.png', // optional
+				icon: '../../../assets/110791-sweet-home/svg/web-page-home.svg', // optional
 				validator: function (value) {                  // optional
 					// only accept addresses with more than 10 chars
 					return {
