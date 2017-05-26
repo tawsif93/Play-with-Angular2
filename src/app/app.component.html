@@ -25,7 +25,7 @@
 		</ul>
 
 		<ul class="nav navbar-nav navbar-toggler-right">
-			<li class="nav-item "><a routerLink="/s" routerLinkActive="active" class="nav-link"><span class="fa fa-fw fa-user"></span> Sign Up</a></li>
+			<li class="nav-item" *ngIf="!auth.authenticated()"><a href="javascript:void(0)" (click)="auth.signup()" routerLinkActive="active" class="nav-link"><i class="fa fa-fw fa-user" aria-hidden="true"></i> Sign Up</a></li>
 			<li class="nav-item" *ngIf="!auth.authenticated()"><a href="javascript:void(0)" (click)="auth.login()" routerLinkActive="active" class="nav-link"><i class="fa fa-fw fa-sign-in" aria-hidden="true"></i> Log In</a></li>
 			<li class="nav-item" *ngIf="auth.authenticated()"><a href="javascript:void(0)" (click)="auth.logout()" routerLinkActive="active" class="nav-link"><i class="fa fa-fw fa-sign-out" aria-hidden="true"></i> Log Out</a></li>
 		</ul>

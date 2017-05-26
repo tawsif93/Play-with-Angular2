@@ -23,7 +23,7 @@ export class Auth {
 			{
 				name: 'address',                              // required
 				placeholder: 'enter your address',            // required
-				icon: '../../../assets/110791-sweet-home/svg/web-page-home.svg', // optional
+				icon: '../../../assets/icon/sweet-home/svg/web-page-home.svg', // optional
 				validator: function (value) {                  // optional
 					// only accept addresses with more than 10 chars
 					return {
@@ -34,12 +34,12 @@ export class Auth {
 			},
 			{
 				name: 'name',
-				icon: 'img/name.svg',
+				icon: '../../../assets/icon/user-name.svg',
 				placeholder: 'your name'
 			},
 			{
 				name: 'last_name',
-				icon: 'img/name.svg',
+				icon: '../../../assets/icon/user-name.svg',
 				placeholder: 'your last name'
 			}
 		]
@@ -73,8 +73,16 @@ export class Auth {
 
 	public login() {
 		// Call the show method to display the widget.
-		this.lock.show();
-	};
+		this.lock.show({
+			allowSignUp: false
+		});
+	}
+
+	public signup() {
+		this.lock.show({
+			allowLogin: false
+		});
+	}
 
 	public authenticated() {
 		// Check if there's an unexpired JWT
