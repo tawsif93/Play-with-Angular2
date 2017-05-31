@@ -3,6 +3,8 @@ import { tokenNotExpired } from 'angular2-jwt';
 import { environment } from '../../../environments/environment';
 import Auth0Lock from 'auth0-lock';
 
+import { AuthHttp } from 'angular2-jwt';
+import { Http } from '@angular/http';
 // Avoid name not found warnings
 // declare var Auth0Lock: any;
 
@@ -47,8 +49,9 @@ export class Auth {
 
 	// Store profile object in auth class
 	userProfile: any;
+	address: String;
 
-	constructor() {
+	constructor(private authHttp: AuthHttp) {
 		// Set userProfile attribute if already saved profile
 		this.userProfile = JSON.parse(localStorage.getItem('profile'));
 
@@ -67,6 +70,10 @@ export class Auth {
 				profile.user_metadata = profile.user_metadata || {};
 				localStorage.setItem('profile', JSON.stringify(profile));
 				this.userProfile = profile;
+
+				if (this.userProfile.user_metadata && this.userProfile.user_metadata.address) {
+					this.address = this.userProfile.user_metadata.address;
+				}
 			});
 		});
 	};
